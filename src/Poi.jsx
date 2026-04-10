@@ -30,8 +30,8 @@ function Poi({x, y, name, desc}) {
         translate: '-50% -50%',
     }} onClick={onPoiClick}>
         <div className="flex flex-col items-center hover:font-bold hover:cursor-pointer group">
-            <span className="border border-black w-4 h-4 rounded-full group-hover:bg-black"></span>
-            <span>{name}</span>
+            <span className="border border-white w-4 h-4 rounded-full group-hover:bg-white"></span>
+            <span className="text-white">{name}</span>
         </div>
     </div>
     <dialog ref={dialog} onClick={onDialogClick}>
