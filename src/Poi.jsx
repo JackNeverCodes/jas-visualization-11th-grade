@@ -1,4 +1,5 @@
 import { useRef } from 'react'
+import clsx from 'clsx'
 
 function Description({name, desc}) {
     return (
@@ -9,7 +10,7 @@ function Description({name, desc}) {
 }
 
 
-function Poi({x, y, name, desc}) {
+function Poi({x, y, name, desc, color}) {
     const dialog = useRef(null)
 
     function onPoiClick() {
@@ -23,20 +24,21 @@ function Poi({x, y, name, desc}) {
     }
 
     return <>
-    <div style={{
-        position: 'absolute',
-        left: x + 'px',
-        top: y + 'px',
-        translate: '-50% -50%',
-    }} onClick={onPoiClick}>
-        <div className="flex flex-col items-center hover:font-bold hover:cursor-pointer group">
-            <span className="border border-white w-4 h-4 rounded-full group-hover:bg-white"></span>
-            <span className="text-white">{name}</span>
+        <div style={{
+            position: 'absolute',
+            left: x + 'px',
+            top: y + 'px',
+            translate: '-50% -50%',
+            '--poi-color': color
+        }} onClick={onPoiClick}>
+            <div className="flex flex-col items-center hover:font-bold hover:cursor-pointer group">
+                <span className="border border-(--poi-color) w-4 h-4 rounded-full group-hover:bg-(--poi-color)"></span>
+                <span className="text-(--poi-color)">{name}</span>
+            </div>
         </div>
-    </div>
-    <dialog ref={dialog} onClick={onDialogClick}>
-        <p>{desc}</p>
-    </dialog>
+        <dialog ref={dialog} onClick={onDialogClick}>
+            <p>{desc}</p>
+        </dialog>
     </>
 }
 

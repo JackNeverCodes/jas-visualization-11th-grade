@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Poi from './Poi'
-import Map from './Map'
 const eras = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2026]
 
 function App() {
@@ -18,10 +17,10 @@ function App() {
 
   return <div className="flex flex-col">
     <input className="m-8" type="range" min={1} max={2026} value={era} onChange={onChange}/>
-    <Map/>
-    {era === 1 && (
-      <Poi x={70} y={100} name={"Era Overview"} desc={"<1 AD: the world as we know it is formed. societies eventually begin to develop around 5000 BC, and after the eras of phoenicia, carthage, and the early migratory hordes of ancient europe, the roman republic establishes an empire and reigns supreme over much of the 'known world'."}/>
-    )}
+    {era === 1 && (<>
+      <Poi x={70} y={100} color="#ffffff" name={"Era Overview"} desc={"<1 AD: the world as we know it is formed. societies eventually begin to develop around 5000 BC, and after the eras of phoenicia, carthage, and the early migratory hordes of ancient europe, the roman republic establishes an empire and reigns supreme over much of the 'known world'."}/>
+      <img width={800} className="self-center" src="western europe no borders template.jpg"/>
+    </>)}
 
     {era === 100 && (
       <Poi x={70} y={100} name={"Era Overview"} desc={"1-100 AD: jesus allegedly dies 1 year before the start of this century. the roman empire has almost total dominance over the known world. christianity begins to spread through rome"}/>
