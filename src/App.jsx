@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Poi from './Poi'
-const eras = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 2000, 2026]
+const eras = [1, 100, 200, 300, 400, 500, 600, 700, 800, 900, 1000, 1100, 1200, 1300, 1400, 1500, 1600, 1700, 1800, 1900, 1950, 2026]
 
 function App() {
   const [era, setEra] = useState(1)
@@ -117,14 +117,14 @@ function App() {
       <img width={800} className="self-center" src="1900 AD.png"/>
     </>)}
 
-    {era === 2000 && (<>
-      <Poi x={70} y={100} color="#ffffff" name={"Era Overview"} desc={"1901-2000 AD: perhaps the most revolutionary era. ww1, ww2, and the cold war have taken place. after the carnage, the world is at relative peace, information era in full swing"}/>
-      <img width={800} className="self-center" src="2000 AD.png"/>
+    {era === 1950 && (<>
+      <Poi x={70} y={100} color="#ffffff" name={"Era Overview"} desc={"1901-1950 AD: perhaps the most revolutionary era. ww1 and ww2 have taken place, and then the world is plunged into a two-sided conflict between the first, second, and third worlds - the united states versus the soviet union."}/>
+      <img width={800} className="self-center" src="1950 ad.png"/>
     </>)}
 
     {era === 2026 && (<>
-      <Poi x={70} y={100} color="#ffffff" name={"Era Overview"} desc={"2001-2026 AD: ooooh this is the present day check it out bro yooo!! marked by advances in technology, the war on terror, numerous other petty wars, but generally relative peace"}/>
-      <img width={800} className="self-center" src="2026 AD.png"/>
+      <Poi x={70} y={100} color="#ffffff" name={"Era Overview"} desc={"1951-2026 AD: cold war!! and then the information age begins, ooooh this is the present day check it out bro yooo!! marked by advances in technology, the war on terror, numerous other petty wars, but generally relative peace"}/>
+      <img width={800} className="self-center" src="2026 ad.png"/>
     </>)}
   </div>
 }
